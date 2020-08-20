@@ -1,0 +1,992 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Media Reference Stack Guide &mdash; System Stacks for Linux* OS  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Media Reference Stack" href="clearlinux/INSTALL.html" />
+    <link rel="prev" title="Media Reference Stack Terms of Use" href="terms_of_use.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> System Stacks for Linux* OS
+          
+
+          
+            
+            <img src="../_static/stacks_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">System Stacks for Linux* OS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#security-issues">Security Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#mailing-list">Mailing List</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dlrs/index.html">Deep Learning Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/README.html">Deep Learning Reference Stack README</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/README.html#for-clear-linux-os-based-images">For Clear Linux OS based images:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/README.html#for-ubuntu-based-images">For Ubuntu based images:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html">Deep Learning Reference Stack Release Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#the-deep-learning-reference-stack-release-built-on-clear-linux-os">The Deep Learning Reference Stack Release built on Clear Linux OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#the-deep-learning-reference-stack-release-built-on-ubuntu">The Deep Learning Reference Stack Release built on Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#licensing">Licensing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#working-with-the-deep-learning-reference-stack">Working with the Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#performance-tuning-configurations">Performance tuning configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#contributing-to-the-deep-learning-reference-stack">Contributing to the Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#reporting-security-issues">Reporting Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/terms_of_use.html">Deep Learning Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#guides">Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/dlrs.html">Deep Learning Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#tensorflow-single-and-multi-node-benchmarks">TensorFlow single and multi-node benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#pytorch-single-and-multi-node-benchmarks">PyTorch single and multi-node benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#tensorflow-training-tfjob-with-kubeflow-and-dlrs">TensorFlow Training (TFJob) with Kubeflow and DLRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#pytorch-training-pytorch-job-with-kubeflow-and-dlrs">PyTorch Training (PyTorch Job) with Kubeflow and DLRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#working-with-horovod-and-openmpi">Working with Horovod* and OpenMPI*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-transformers-for-natural-language-processing">Using Transformers* for Natural Language Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-the-openvino-model-optimizer">Using the OpenVINO™ Model Optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-the-openvino-toolkit-inference-engine">Using the OpenVINO™ toolkit Inference Engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-seldon-and-openvino-model-server-with-the-deep-learning-reference-stack">Using Seldon and OpenVINO™ model server with the Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#use-jupyter-notebook">Use Jupyter Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#uninstallation">Uninstallation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#compiling-aixprt-with-openmp-on-dlrs">Compiling AIXPRT with OpenMP on DLRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#related-topics">Related topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#clear-linux-os-based-containers">Clear Linux OS based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/clearlinux/README.html">Deep Learning Reference Stack containers based on Clear Linux OS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/clearlinux/ml-compiler/README.html">System Stacks Deep Learning Compiler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/ml-compiler/README.html#building-locally">Building Locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/ml-compiler/README.html#build-args">Build ARGs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#pytorch-versions">PyTorch* versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/mkl/README.html">Deep Learning Reference Stack with Pytorch and Intel® oneAPI Deep Neural Network Library (oneDNN)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/mkl/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/oss/README.html">Deep Learning Reference Stack with Pytorch and OpenBLAS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/oss/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#tensorflow-versions">TensorFlow* versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/mkl/README.html">Deep Learning Reference Stack with TensorFlow and Intel® oneAPI Deep Neural Network Library (oneDNN)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/mkl/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/mkl/scripts/README.html">Deep Learning Reference Stack Scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/oss/README.html">Deep Learning Reference Stack with Tensorflow and Optimized Eigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/oss/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow_2/mkl/README.html">Deep Learning Reference Stack with TensorFlow 2.0 and Intel® oneAPI Deep Neural Network Library (oneDNN)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow_2/mkl/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow_2/mkl/scripts/README.html">Deep Learning Reference Stack Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#ubuntu-based-containers">Ubuntu* based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/ubuntu/README.html">Deep Learning Reference Stack containers based on Ubuntu*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#id1">PyTorch versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/pytorch/README.html">Deep Learning Reference Stack with Pytorch and Intel® MKL-DNN</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#id2">TensorFlow versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow_2/scripts/Readme.html">Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow_2/README.html">Deep Learning Reference Stack with TensorFlow and Intel® MKL-DNN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow/scripts/Readme.html">Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow/README.html">Deep Learning Reference Stack with TensorFlow and Intel® MKL-DNN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dars/index.html">Data Analytics Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dars/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html">Data Analytics Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/releasenote.html#stack-features">Stack Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/releasenote.html#the-data-analytics-reference-stack-with-mkl">The Data Analytics Reference Stack with MKL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/releasenote.html#the-data-analytics-reference-stack-with-openblas">The Data Analytics Reference Stack with OpenBLAS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#licensing">Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#working-with-the-data-analytics-reference-stack">Working with the Data Analytics Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#contributing-to-the-database-reference-stack">Contributing to the Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/terms_of_use.html">Data Analytics Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dars/index.html#guide">Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dars/dars.html">Data Analytics Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#using-the-docker-images">Using the Docker images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#using-apache-spark-in-dars">Using Apache Spark* in DARS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#using-apache-hadoop-in-dars">Using Apache Hadoop in DARS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#deploy-dars-on-kubernetes">Deploy DARS on Kubernetes*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dars/index.html#clear-linux-based-containers">Clear Linux based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/README.html">Data Analytics Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/index.html#openblas-versions">OpenBLAS versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html">Data Analytics Reference Stack with OpenBLAS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#java-requirements">Java Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#single-node-hadoop-cluster-setup">Single Node Hadoop Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#inside-the-running-container-we-need-to-edit-hadoop-configuration-files-as-follows">Inside the running container we need to edit hadoop configuration files as follows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#start-hadoop-daemons">Start Hadoop daemons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#single-node-spark-cluster-setup">Single Node Spark Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#run-the-pi-calculator-example-on-spark-shell">Run the Pi Calculator Example on spark-shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#run-the-pi-calculator-example-on-pyspark">Run the Pi Calculator Example on pyspark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#deploy-dars-on-kubernetes">Deploy DARS on Kubernetes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#kubernetes-installation">Kubernetes installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#faq"><strong>FAQ</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/index.html#mkl-versions">MKL versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html">Data Analytics Reference Stack with Intel® MKL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#java-requirements">Java Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#single-node-hadoop-cluster-setup">Single Node Hadoop Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#inside-the-running-container-we-need-to-edit-hadoop-configuration-files-as-follows">Inside the running container we need to edit hadoop configuration files as follows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#start-hadoop-daemons">Start Hadoop daemons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#single-node-spark-cluster-setup">Single Node Spark Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#run-the-pi-calculator-example-on-spark-shell">Run the Pi Calculator Example on spark-shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#run-the-pi-calculator-example-on-pyspark">Run the Pi Calculator Example on pyspark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#deploy-dars-on-kubernetes">Deploy DARS on Kubernetes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#kubernetes-installation">Kubernetes installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#faq"><strong>FAQ</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dbrs/index.html">Database Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/README.html">Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html">Database Reference Stack Release Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-releases">The Database Reference Stack Releases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-with-cassandra">The Database Reference Stack with Cassandra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-with-redis">The Database Reference Stack with Redis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-with-memcached">The Database Reference Stack with Memcached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#how-to-get-the-database-reference-stack">How to get the Database Reference Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#licensing">Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#working-with-the-database-reference-stack">Working with the Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#contributing-to-the-database-reference-stack">Contributing to the Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/terms_of_use.html">Database Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#guide">Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/dbrs.html">Database Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#hardware-requirements">Hardware Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#firmware-configuration">Firmware configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#hardware-configuration">Hardware Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#running-dbrs-with-apache-cassandra">Running DBRS with Apache Cassandra*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#deploy-an-apache-cassandra-pmem-cluster-on-kubernetes">Deploy An Apache Cassandra-PMEM cluster on Kubernetes*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#running-dbrs-with-redis">Running DBRS with Redis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#running-dbrs-with-memcached">Running DBRS with Memcached</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#clear-linux-based-containers">Clear Linux based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html">Database Reference Stack with Redis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#building-locally">Building Locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#clone-the-repository">Clone the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#run-dbrs-redis-as-a-standalone-container">Run DBRS Redis as a standalone container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#deploy-dbrs-redis-cluster-on-kubernetes">Deploy DBRS Redis cluster on Kubernetes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/clearlinux/redis/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/index.html#apache-cassandra-versions">Apache Cassandra* versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/README.html">Database Reference Stack with Cassandra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/cassandra-pmem-helm/files/conf/README.html">Configuration files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/cassandra-pmem-helm/files/testProfiles/README.html">Test profiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/index.html#memcached-versions">memcached versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/memcached/README.html">Memcached DBRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/memcached/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/index.html#redis-versions">REDIS versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html">Database Reference Stack with Redis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#centos-based-containers">CentOS based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/centos8/memcached/README.html">Memcached DBRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/centos8/memcached/README.html#build-dbrs-memcached-image">Build DBRS Memcached image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/centos8/memcached/README.html#run-dbrs-memcached-as-a-standalone-container">Run DBRS Memcached as a standalone container</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/centos8/memcached/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Media Reference Stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html">Media Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="README.html#source-code">Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="README.html#supported-platforms-and-media-codecs">Supported Platforms and Media Codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="releasenotes.html">Media Reference Stack Release Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#the-media-reference-stack">The Media Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#licensing">Licensing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#the-media-reference-stack-licenses">The Media Reference Stack licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#disclaimer">Disclaimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#source-code">Source code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#contributing-to-the-media-reference-stack">Contributing to the Media Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="releasenotes.html#reporting-security-issues">Reporting Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="terms_of_use.html">Media Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#guide">Guide</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Media Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-the-pre-built-mers-container-image">Get the pre-built MeRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-mers-container-image-from-source">Build the MeRS container image from source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#use-the-mers-container-image">Use the MeRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-aom-support">Add AOM support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#clear-linux-based-containers">Clear Linux based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="clearlinux/INSTALL.html">Media Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="clearlinux/INSTALL.html#building-locally">Building Locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clearlinux/INSTALL.html#pulling-from-docker-hub">Pulling from Docker Hub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clearlinux/INSTALL.html#running-the-media-container">Running the Media Container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clearlinux/INSTALL.html#run-examples">Run examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hpcrs/index.html">High Performance Computing Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../hpcrs/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpcrs/README.html">High Performance Compute Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#stack-features">Stack features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#get-the-pre-built-hpcrs-container-image">Get the pre-built HPCRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#build-the-hpcrs-container-image-from-source">Build the HPCRS container image from source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#use-the-hpcrs-container-image">Use the HPCRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#convert-the-hpcrs-image-to-a-singularity-image">Convert the HPCRS image to a Singularity image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/README.html#legal-notice">LEGAL NOTICE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hpcrs/NEWS.html">Release notes for HPCRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/NEWS.html#release-v0-1-0">Release <code class="docutils literal notranslate"><span class="pre">v0.1.0</span></code> :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hpcrs/terms_of_use.html">High Performance Computing Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hpcrs/index.html#guides">Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../hpcrs/d2s/Readme.html">d2s - A wrapper used to convert Docker images to Singularity images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/d2s/Readme.html#version-compatibility">Version compatibility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/d2s/Readme.html#install-singularity">Install Singularity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/d2s/Readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/d2s/Readme.html#download-compile-singularity">Download &amp; Compile <em>Singularity</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hpcrs/d2s/Readme.html#source-bash-completion-file-optional">Source bash completion file (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hpcrs/docs/FAQ.html">HPCRS Frequently Asked Questions (FAQ)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/intel/stacks">Project GitHub repository</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">System Stacks for Linux* OS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Media Reference Stack</a> &raquo;</li>
+        
+      <li>Media Reference Stack Guide</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="media-reference-stack-guide">
+<span id="mers-guide"></span><h1>Media Reference Stack Guide<a class="headerlink" href="#media-reference-stack-guide" title="Permalink to this headline">¶</a></h1>
+<p>The Media Reference Stack (MeRS) is a highly optimized software stack for
+Intel® Architecture Processors (the CPU) and Intel® Processor Graphics (the
+GPU) to enable media prioritized workloads, such as transcoding and analytics.</p>
+<p>This guide explains how to use the pre-built MeRS container image, build
+your own MeRS container image, and use the reference stack.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id5">Overview</a></p></li>
+<li><p><a class="reference internal" href="#releases" id="id6">Releases</a></p></li>
+<li><p><a class="reference internal" href="#get-the-pre-built-mers-container-image" id="id7">Get the pre-built MeRS container image</a></p></li>
+<li><p><a class="reference internal" href="#build-the-mers-container-image-from-source" id="id8">Build the MeRS container image from source</a></p></li>
+<li><p><a class="reference internal" href="#use-the-mers-container-image" id="id9">Use the MeRS container image</a></p></li>
+<li><p><a class="reference internal" href="#add-aom-support" id="id10">Add AOM support</a></p></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id5">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Developers face challenges due to the complexity of software integration for
+media tasks that require investing time and engineering effort.
+For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Finding the balance between quality and performance.</p></li>
+<li><p>Understanding available standard-compliant encoders.</p></li>
+<li><p>Optimizing across the hardware-software stack for efficiency.</p></li>
+</ul>
+</div></blockquote>
+<p>MeRS abstracts away the complexity of integrating multiple software
+components and specifically tunes them for Intel platforms. MeRS enables
+media and visual cloud developers to deliver experiences using a simple
+containerized solution.</p>
+</div>
+<div class="section" id="releases">
+<h2><a class="toc-backref" href="#id6">Releases</a><a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+<p>Refer to the <a class="reference external" href="https://github.com/intel/stacks">System Stacks for Linux* OS repository</a> for information and download links for the
+different versions and offerings of the stack.</p>
+<ul class="simple">
+<li><p>MeRS V0.2.0 release announcement including media processing on GPU and
+analytics on CPU.</p></li>
+<li><p>MeRS V0.1.0 including media processing and analytics CPU.</p></li>
+<li><p><a class="reference external" href="https://github.com/intel/stacks/blob/master/mers/NEWS.md">MeRS Release notes on Github*</a> for the
+latest release of Deep Learning Reference Stack</p></li>
+</ul>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>MeRS can run on any host system that supports Docker*. This guide uses
+Clear Linux* OS as the host system.</p>
+<ul class="simple">
+<li><p>To install Clear Linux OS on a host system, see how to
+<cite>install Clear Linux* OS from the live desktop
+&lt;https://docs.01.org/clearlinux/latest/get-started/bare-metal-install-desktop.html&gt;</cite>.</p></li>
+<li><p>To install Docker* on a Clear Linux OS host system, see
+the <cite>instructions for installing Docker* &lt;https://docs.01.org/clearlinux/latest/tutorials/docker.html&gt;</cite>.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For optimal media analytics performance, a processor with Vector Neural
+Network Instructions (VNNI) should be used. VNNI is an extension of Intel®
+Advanced Vector Extensions 512 (Intel® AVX-512) and is available starting
+with the 2nd generation of Intel® Xeon® Scalable processors, providing AI
+inference acceleration.</p>
+</div>
+</div>
+<div class="section" id="stack-features">
+<h3>Stack features<a class="headerlink" href="#stack-features" title="Permalink to this headline">¶</a></h3>
+<p>The MeRS provides a <a class="reference external" href="https://hub.docker.com/r/sysstacks/mers-clearlinux">pre-built Docker image available on DockerHub</a>, which includes
+instructions on building the image from source. MeRS is open-sourced to
+make sure developers have easy access to the source code and are able to
+customize it. MeRS is built using the latest <em>clearlinux/os-core</em> Docker
+image and aims to support the latest Clear Linux OS version.</p>
+<p>MeRS provides the following libraries and drivers:</p>
+<table class="colwidths-auto docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>SVT-HEVC*</p></td>
+<td><p>Scalable Video Technology for HEVC encoding, also known as H.265</p></td>
+</tr>
+<tr class="row-even"><td><p>SVT-AV1</p></td>
+<td><p>Scalable Video Technology for AV1 encoding</p></td>
+</tr>
+<tr class="row-odd"><td><p>x264</p></td>
+<td><p>x264 for H.264/MPEG-4 AVC encoding</p></td>
+</tr>
+<tr class="row-even"><td><p>dav1d</p></td>
+<td><p><a class="reference external" href="https://code.videolan.org/videolan/dav1d">dav1d</a> for AV1 decoding</p></td>
+</tr>
+<tr class="row-odd"><td><p>libVA</p></td>
+<td><p><a class="reference external" href="https://github.com/intel/libva">VAAPI (Video Acceleration API) open-source library (LibVA),</a> which provides access to graphics
+hardware acceleration capabilities.</p></td>
+</tr>
+<tr class="row-even"><td><p>media-driver</p></td>
+<td><p><a class="reference external" href="https://github.com/intel/media-driver/">Intel® Media Driver for VAAPI</a>
+for supporting hardware acceleration on Intel® Gen graphics hardware
+platforms.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gmmlib</p></td>
+<td><p><a class="reference external" href="https://github.com/intel/gmmlib">Intel® Graphics Memory Management Library</a> provides device specific and buffer
+management for the Intel® Graphics Compute Runtime for OpenCL(TM) and
+the Intel® Media Driver for VAAPI.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Components of the MeRS include:</p>
+<ul>
+<li><p>Clear Linux OS as a base for performance and security.</p></li>
+<li><p><a class="reference external" href="https://01.org/openvinotoolkit">OpenVINO™ toolkit</a> for inference.</p></li>
+<li><p><a class="reference external" href="https://www.ffmpeg.org">FFmpeg*</a> with plugins for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://01.org/svt">Scalable Video Technology (SVT)</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://gstreamer.freedesktop.org/">GStreamer*</a>  with plugins for:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://01.org/svt">Scalable Video
+Technology (SVT)</a></p></li>
+<li><p><a class="reference external" href="https://01.org/openvinotoolkit">OpenVINO™ toolkit</a></p></li>
+<li><p><a class="reference external" href="https://github.com/GStreamer/gstreamer-vaapi">VAAPI</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://github.com/Intel-Media-SDK/MediaSDK">Intel® Media SDK</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MeRS is validated on 11th generation Intel® Processor Graphics and
+newer. Older generations should work but are not tested against.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pre-built MeRS container image configures FFmpeg without certain
+elements (specific encoder, decoder, muxer, etc.) that you may require. If
+you require changes to FFmpeg we suggest starting at
+<a class="reference internal" href="#building-the-mers-container-image"><span class="std std-ref">Build the MeRS container image from source</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Media Reference Stack is a collective work, and each piece of software
+within the work has its own license. Please see the <a class="reference external" href="https://clearlinux.org/stacks/media/terms-of-use">MeRS Terms of Use</a> for more details about
+licensing and usage of the Media Reference Stack.</p>
+</div>
+</div>
+</div>
+<div class="section" id="get-the-pre-built-mers-container-image">
+<h2><a class="toc-backref" href="#id7">Get the pre-built MeRS container image</a><a class="headerlink" href="#get-the-pre-built-mers-container-image" title="Permalink to this headline">¶</a></h2>
+<p>Pre-built MeRS Docker images are available on DockerHub* at
+<a class="reference external" href="https://hub.docker.com/r/sysstacks/mers-clearlinux">https://hub.docker.com/r/sysstacks/mers-clearlinux</a></p>
+<p>To use the MeRS:</p>
+<ol class="arabic">
+<li><p>Pull the image directly from <a class="reference external" href="https://hub.docker.com/r/sysstacks/mers-clearlinux">Docker Hub</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker pull sysstacks/mers-clearlinux
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MeRS docker image is large in size and will take some time to
+download depending on your Internet connection.</p>
+<p>If you are on a network with outbound proxies, be sure to configure
+Docker to allow access. See the <a class="reference external" href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">Docker service proxy</a> and
+<a class="reference external" href="https://docs.docker.com/network/proxy/#configure-the-docker-client">Docker client proxy</a>
+documentation for more details.</p>
+</div>
+</li>
+<li><p>Once you have downloaded the image, run it using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it sysstacks/mers-clearlinux
+</pre></div>
+</div>
+<p>This will launch the image and drop you into a bash shell inside the
+container. GStreamer and FFmpeg programs are installed in the container
+image and accessible in the default $PATH. Use these programs as you would
+outside of MeRS.</p>
+<p>Paths to media files and video devices, such as cameras, can be shared from
+the host to the container with the <strong class="command">--volume</strong> switch <a class="reference external" href="https://docs.docker.com/storage/volumes/">using Docker
+volumes</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="build-the-mers-container-image-from-source">
+<span id="building-the-mers-container-image"></span><h2><a class="toc-backref" href="#id8">Build the MeRS container image from source</a><a class="headerlink" href="#build-the-mers-container-image-from-source" title="Permalink to this headline">¶</a></h2>
+<p>If you choose to build your own MeRS container image, you can optionally add
+customizations as needed. The <code class="file docutils literal notranslate"><span class="pre">Dockerfile</span></code> for the MeRS is available on
+<a class="reference external" href="https://github.com/intel/stacks/tree/master/mers">GitHub</a> and can be used
+as a reference when creating your own container image.</p>
+<ol class="arabic">
+<li><p>The MeRS image is part of the dockerfiles repository inside the Clear Linux OS
+organization on GitHub. Clone the <code class="file docutils literal notranslate"><span class="pre">stacks</span></code> repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/intel/stacks.git
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to the <code class="file docutils literal notranslate"><span class="pre">stacks/mers/clearlinux</span></code> directory which contains
+the Dockerfile for the MeRS.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ./stacks/mers/clearlinux
+</pre></div>
+</div>
+</li>
+<li><p>Use the <strong class="command">docker build</strong> command with the <code class="file docutils literal notranslate"><span class="pre">Dockerfile</span></code> to
+build the MeRS container image.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build --no-cache -t sysstacks/mers-clearlinux .
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="use-the-mers-container-image">
+<h2><a class="toc-backref" href="#id9">Use the MeRS container image</a><a class="headerlink" href="#use-the-mers-container-image" title="Permalink to this headline">¶</a></h2>
+<p>This section shows examples of how the MeRS container image can be used to
+process media files.</p>
+<p>The models and video source can be substituted from your use-case. Some
+publicly licensed sample videos are available at <a class="reference external" href="https://github.com/intel-iot-devkit/sample-videos">sample-videos repository</a> for testing.</p>
+<div class="section" id="media-transcoding">
+<h3>Media Transcoding<a class="headerlink" href="#media-transcoding" title="Permalink to this headline">¶</a></h3>
+<p>The examples below show transcoding using the GPU or CPU for processing.</p>
+<ol class="arabic">
+<li><p>On the host system, setup a workspace for data and models:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir ~/ffmpeg
+mkdir ~/ffmpeg/input
+mkdir ~/ffmpeg/output
+</pre></div>
+</div>
+</li>
+<li><p>Copy a video file to <code class="file docutils literal notranslate"><span class="pre">~/ffmpeg/input</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp &lt;/path/to/video&gt; ~/ffmpeg/input
+</pre></div>
+</div>
+</li>
+<li><p>Run the <em>sysstacks/mers-clearlinux</em> Docker image, allowing shared access to
+the workspace on the host:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it <span class="se">\</span>
+--volume ~/ffmpeg:/home/mers-user:ro <span class="se">\</span>
+--device<span class="o">=</span>/dev/dri <span class="se">\</span>
+--env <span class="nv">QSV_DEVICE</span><span class="o">=</span>/dev/dri/renderD128 <span class="se">\</span>
+sysstacks/mers-clearlinux:latest
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong class="command">--device</strong> parameter and the <strong>GSV_DEVICE</strong> environment
+variable allow shared access to the GPU on the host system. The values
+needed may be different depending on host’s graphics configuration.</p>
+</div>
+<p>After running the <strong class="command">docker run</strong> command, you enter a bash shell
+inside the container.</p>
+</li>
+<li><p>From the container shell, you can run FFmpeg and
+GStreamer commands against the videos in <code class="file docutils literal notranslate"><span class="pre">/home/mers-user/input</span></code> as
+you would normally outside of MeRS.</p>
+<p>Some sample commands are provided for reference.</p>
+<p>For more information on using the <em>FFmpeg</em> commands, refer to the <a class="reference external" href="https://ffmpeg.org/documentation.html">FFmpeg
+documentation</a>.</p>
+<p>For more information on using the <em>GStreamer</em> commands, refer to the
+<a class="reference external" href="https://gstreamer.freedesktop.org/documentation">GStreamer documentation</a>.</p>
+</li>
+</ol>
+<div class="section" id="example-transcoding-using-gpu">
+<h4>Example: Transcoding using GPU<a class="headerlink" href="#example-transcoding-using-gpu" title="Permalink to this headline">¶</a></h4>
+<p>The examples below show transcoding using the GPU for processing.</p>
+<p>Using a FFmpeg to transcode raw content to SVT-HEVC and mp4:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -y -vaapi_device /dev/dri/renderD128 -f rawvideo -video_size 320x240 -r <span class="m">30</span> -i &lt;/home/mers-user/input/test.yuv&gt; -vf <span class="s1">&#39;format=nv12, hwupload&#39;</span> -c:v h264_vaapi -y &lt;/home/mers-user/output/test.mp4&gt;
+</pre></div>
+</div>
+<p>Using a GStreamer to transcode H264 to H265:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gst-launch-1.0 filesrc <span class="nv">location</span><span class="o">=</span>&lt;/home/mers-user/input/test.264&gt; ! h264parse ! vaapih264dec ! vaapih265enc rate-control<span class="o">=</span>cbr <span class="nv">bitrate</span><span class="o">=</span><span class="m">5000</span> ! video/x-h265,profile<span class="o">=</span>main ! h265parse ! filesink <span class="nv">location</span><span class="o">=</span>&lt;/home/mers-user/output/test.265&gt;
+</pre></div>
+</div>
+<p>MeRS builds FFmpeg with <a class="reference external" href="https://trac.ffmpeg.org/wiki/HWAccelIntro">HWAccel</a> enabled which supports VAAPI.
+Refer to the <a class="reference external" href="https://trac.ffmpeg.org/wiki/Hardware/VAAPI">FFmpeg wiki on VAAPI</a> and <a class="reference external" href="https://github.com/Intel-Media-SDK/MediaSDK/wiki/Build-and-use-GStreamer-with-MediaSDK#usage-examples">GStreamer with Media-SDK
+wiki</a>
+for more usage examples and compatibility information.</p>
+</div>
+<div class="section" id="example-transcoding-using-cpu">
+<h4>Example: Transcoding using CPU<a class="headerlink" href="#example-transcoding-using-cpu" title="Permalink to this headline">¶</a></h4>
+<p>The example below shows transcoding of raw yuv420 content to SVT-HEVC and mp4,
+using the CPU for processing.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -f rawvideo -vcodec rawvideo -s 320x240 -r <span class="m">30</span> -pix_fmt yuv420p -i &lt;/home/mers-user/input/test.yuv&gt; -c:v libsvt_hevc -y &lt;/home/mers-user/output/test.mp4&gt;
+</pre></div>
+</div>
+<p>Additional generic examples of FFmpeg commands can be found in the
+<a class="reference external" href="https://github.com/OpenVisualCloud/Dockerfiles/blob/master/doc/ffmpeg.md">OpenVisualCloud repository</a>
+and used for reference with MeRS.</p>
+</div>
+</div>
+<div class="section" id="media-analytics">
+<h3>Media Analytics<a class="headerlink" href="#media-analytics" title="Permalink to this headline">¶</a></h3>
+<p>This example shows how to perform analytics and inferences with GStreamer
+using the CPU for processing.</p>
+<p>The steps here are referenced from the <a class="reference external" href="https://github.com/opencv/gst-video-analytics/wiki">gst-video-analytics Getting Started
+Guide</a> except simply
+substituting the <em>gst-video-analytics</em> docker image for the
+<em>sysstacks/mers-clearlinux</em> image.</p>
+<p>The example below shows how to use the MeRS container image to perform video
+with object detection and attributes recognition of a video using GStreamer
+using pre-trained models and sample video files.</p>
+<ol class="arabic">
+<li><p>On the host system, setup a workspace for data and models:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir ~/gva
+mkdir ~/gva/data
+mkdir ~/gva/data/models
+mkdir ~/gva/data/models/intel
+mkdir ~/gva/data/models/common
+mkdir ~/gva/data/video
+</pre></div>
+</div>
+</li>
+<li><p>Clone the opencv/gst-video-analytics repository into the workspace:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/opencv/gst-video-analytics ~/gva/gst-video-analytics
+<span class="nb">cd</span> ~/gva/gst-video-analytics
+git submodule init
+git submodule update
+</pre></div>
+</div>
+</li>
+<li><p>Clone the Open Model Zoo repository into the workspace:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/opencv/open_model_zoo.git ~/gva/open_model_zoo
+</pre></div>
+</div>
+</li>
+<li><p>Use the Model Downloader tool of Open Model Zoo to download ready to use
+pre-trained models in IR format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are on a network with outbound proxies, you will need to
+configure set environment variables with the proxy server.
+Refer to the documentation on <cite>proxy configuration &lt;https://docs.01.org/clearlinux/latest/tutorials/proxy.html&gt;</cite> for detailed steps.</p>
+<p>On Clear Linux OS systems you will need the <em>python-extras</em> bundle.
+Use <strong class="command">sudo swupd bundle-add python-extras</strong> for the downloader script to work.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/gva/open_model_zoo/tools/downloader
+python3 downloader.py --list ~/gva/gst-video-analytics/samples/model_downloader_configs/intel_models_for_samples.LST -o ~/gva/data/models/intel
+</pre></div>
+</div>
+</li>
+<li><p>Copy a video file in h264 or mp4 format to <code class="file docutils literal notranslate"><span class="pre">~/gva/data/video</span></code>. Any
+video with cars, pedestrians, human bodies, and/or human faces can be used.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/intel-iot-devkit/sample-videos.git ~/gva/data/video
+</pre></div>
+</div>
+<p>This example simply clones all the video files from the <a class="reference external" href="https://github.com/intel-iot-devkit/sample-videos">sample-videos
+repsoitory</a>.</p>
+</li>
+<li><p>From a desktop terminal, allow local access to the X host display.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xhost local:root
+
+<span class="nb">export</span> <span class="nv">DATA_PATH</span><span class="o">=</span>~/gva/data
+<span class="nb">export</span> <span class="nv">GVA_PATH</span><span class="o">=</span>~/gva/gst-video-analytics
+<span class="nb">export</span> <span class="nv">MODELS_PATH</span><span class="o">=</span>~/gva/data/models
+<span class="nb">export</span> <span class="nv">INTEL_MODELS_PATH</span><span class="o">=</span>~/gva/data/models/intel
+<span class="nb">export</span> <span class="nv">VIDEO_EXAMPLES_PATH</span><span class="o">=</span>~/gva/data/video
+</pre></div>
+</div>
+</li>
+<li><p>Run the <em>sysstacks/mers-clearlinux</em> docker image, allowing shared access
+to the X server and workspace on the host:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --runtime<span class="o">=</span>runc --net<span class="o">=</span>host <span class="se">\</span>
+-v ~/.Xauthority:/root/.Xauthority <span class="se">\</span>
+-v /tmp/.X11-unix:/tmp/.X11-unix <span class="se">\</span>
+-e <span class="nv">DISPLAY</span><span class="o">=</span><span class="nv">$DISPLAY</span> <span class="se">\</span>
+-e <span class="nv">HTTP_PROXY</span><span class="o">=</span><span class="nv">$HTTP_PROXY</span> <span class="se">\</span>
+-e <span class="nv">HTTPS_PROXY</span><span class="o">=</span><span class="nv">$HTTPS_PROXY</span> <span class="se">\</span>
+-e <span class="nv">http_proxy</span><span class="o">=</span><span class="nv">$http_proxy</span> <span class="se">\</span>
+-e <span class="nv">https_proxy</span><span class="o">=</span><span class="nv">$https_proxy</span> <span class="se">\</span>
+-v <span class="nv">$GVA_PATH</span>:/home/mers-user/gst-video-analytics <span class="se">\</span>
+-v <span class="nv">$INTEL_MODELS_PATH</span>:/home/mers-user/intel_models <span class="se">\</span>
+-v <span class="nv">$MODELS_PATH</span>:/home/mers-user/models <span class="se">\</span>
+-v <span class="nv">$VIDEO_EXAMPLES_PATH</span>:/home/mers-user/video-examples <span class="se">\</span>
+-e <span class="nv">MODELS_PATH</span><span class="o">=</span>/home/mers-user/intel_models:/home/mers-user/models <span class="se">\</span>
+-e <span class="nv">VIDEO_EXAMPLES_DIR</span><span class="o">=</span>/home/mers-user/video-examples <span class="se">\</span>
+sysstacks/mers-clearlinux:latest
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <strong class="command">docker run</strong> command above:</p>
+<ul class="simple">
+<li><p><strong class="command">--runtime=runc</strong> specifies the container runtime to be
+<em>runc</em> for this container. It is needed for correct interaction with X
+server.</p></li>
+<li><p><strong class="command">--net=host</strong> provides host network access to the container.
+It is needed for correct interaction with X server.</p></li>
+<li><p>Files <code class="file docutils literal notranslate"><span class="pre">~/.Xauthority</span></code> and <code class="file docutils literal notranslate"><span class="pre">/tmp/.X11-unix</span></code> mapped to the
+container are needed to ensure smooth authentication with X server.</p></li>
+<li><p><strong class="command">-v</strong> instances are needed to map host system directories
+inside the Docker container.</p></li>
+<li><p><strong class="command">-e</strong> instances set the Docker container environment
+variables. Some examples need these variables set correctly in order
+to operate correctly. Proxy variables are needed if host is behind a
+firewall.</p></li>
+</ul>
+</div>
+<p>After running the <strong class="command">docker run</strong> command, it will drop you into a
+bash shell inside the container.</p>
+</li>
+<li><p>From the container shell, run a sample analytics program in
+<code class="file docutils literal notranslate"><span class="pre">~/gva/gst-video-analytics/samples</span></code> against your video source.</p>
+<p>Below are sample analytics that can be run against the sample videos.
+Choose one to run:</p>
+<ul>
+<li><p>Samples with <em>face detection and classification</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gst-video-analytics/samples/shell/face_detection_and_classification.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/face-demographics-walking-and-pause.mp4
+./gst-video-analytics/samples/shell/face_detection_and_classification.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/face-demographics-walking.mp4
+./gst-video-analytics/samples/shell/face_detection_and_classification.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/head-pose-face-detection-female-and-male.mp4
+./gst-video-analytics/samples/shell/face_detection_and_classification.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/head-pose-face-detection-male.mp4
+./gst-video-analytics/samples/shell/face_detection_and_classification.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/head-pose-face-detection-female.mp4
+</pre></div>
+</div>
+<p>When running, a video with object detection and attributes recognition
+(bounding boxes around faces with recognized attributes) should be
+played.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/mers-fig-1.png"><img alt="Face detection with the Clear Linux* OS Media Reference Stack" src="../_images/mers-fig-1.png" style="width: 460.79999999999995px; height: 278.4px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: Screenshot of MeRS running face detection with GSTreamer
+and OpenVINO.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Sample with  <em>vehicle detection</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gst-video-analytics/samples/shell/vehicle_detection_2sources_cpu.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/car-detection.mp4
+</pre></div>
+</div>
+<p>When running, a video with object detection and attributes recognition
+(bounding boxes around vehicles with recognized attributes) should be
+played.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/mers-fig-2.png"><img alt="Vehicle detection with the Clear Linux* OS Media Reference Stack" src="../_images/mers-fig-2.png" style="width: 460.79999999999995px; height: 278.4px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: Screenshot of MeRS running vehicle detection with
+GSTreamer and OpenVINO.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Sample with <em>FPS measurement</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gst-video-analytics/samples/shell/console_measure_fps_cpu.sh <span class="nv">$VIDEO_EXAMPLES_DIR</span>/bolt-detection.mp4
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="add-aom-support">
+<h2><a class="toc-backref" href="#id10">Add AOM support</a><a class="headerlink" href="#add-aom-support" title="Permalink to this headline">¶</a></h2>
+<p>The current version of MeRS does not include the <a class="reference external" href="https://aomedia.org/">Alliance for Open Media</a> Video Codec (AOM). AOM can be built from source on an
+individual basis.</p>
+<p>To add AOM support to the MeRS image:</p>
+<ol class="arabic">
+<li><p>The following programs are needed to add AOM support to MeRS: <strong>docker,
+git, patch</strong>. On Clear Linux OS these can be  installed with the commands below. For
+other operating systems, install the appropriate packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo swupd bundle-add containers-basic dev-utils
+</pre></div>
+</div>
+</li>
+<li><p>Clone the Intel Stacks repository from GitHub.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/intel/stacks.git
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to the directory for the MeRS image.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> stacks/mers/clearlinux/
+</pre></div>
+</div>
+</li>
+<li><p>Apply the patch to the <code class="file docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>patch -p1 &lt; aom-patches/stacks-mers-v2-include-aom.diff
+</pre></div>
+</div>
+</li>
+<li><p>Use the <strong class="command">docker build</strong> command to build a local copy of the
+MeRS container image tagged as <em>aom</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build --no-cache -t sysstacks/mers-clearlinux:aom .
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Once the build has completed successfully, the local image can be used
+following the same steps in this tutorial by substituting the image name with
+<em>sysstacks/mers-clearlinux:aom</em>.</p>
+<p><strong>Intel, Xeon, OpenVINO, and the Intel logo are trademarks of Intel
+Corporation or its subsidiaries.</strong></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="clearlinux/INSTALL.html" class="btn btn-neutral float-right" title="Media Reference Stack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="terms_of_use.html" class="btn btn-neutral float-left" title="Media Reference Stack Terms of Use" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

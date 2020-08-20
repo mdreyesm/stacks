@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>High Performance Compute Reference Stack &mdash; System Stacks for Linux* OS  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release notes for HPCRS" href="NEWS.html" />
+    <link rel="prev" title="High Performance Computing Reference Stack" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> System Stacks for Linux* OS
+          
+
+          
+            
+            <img src="../_static/stacks_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">System Stacks for Linux* OS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#security-issues">Security Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#mailing-list">Mailing List</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dlrs/index.html">Deep Learning Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/README.html">Deep Learning Reference Stack README</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/README.html#for-clear-linux-os-based-images">For Clear Linux OS based images:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/README.html#for-ubuntu-based-images">For Ubuntu based images:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html">Deep Learning Reference Stack Release Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#the-deep-learning-reference-stack-release-built-on-clear-linux-os">The Deep Learning Reference Stack Release built on Clear Linux OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#the-deep-learning-reference-stack-release-built-on-ubuntu">The Deep Learning Reference Stack Release built on Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#licensing">Licensing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#working-with-the-deep-learning-reference-stack">Working with the Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#performance-tuning-configurations">Performance tuning configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#contributing-to-the-deep-learning-reference-stack">Contributing to the Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/releasenote.html#reporting-security-issues">Reporting Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/terms_of_use.html">Deep Learning Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#guides">Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/dlrs.html">Deep Learning Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#tensorflow-single-and-multi-node-benchmarks">TensorFlow single and multi-node benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#pytorch-single-and-multi-node-benchmarks">PyTorch single and multi-node benchmarks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#tensorflow-training-tfjob-with-kubeflow-and-dlrs">TensorFlow Training (TFJob) with Kubeflow and DLRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#pytorch-training-pytorch-job-with-kubeflow-and-dlrs">PyTorch Training (PyTorch Job) with Kubeflow and DLRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#working-with-horovod-and-openmpi">Working with Horovod* and OpenMPI*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-transformers-for-natural-language-processing">Using Transformers* for Natural Language Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-the-openvino-model-optimizer">Using the OpenVINO™ Model Optimizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-the-openvino-toolkit-inference-engine">Using the OpenVINO™ toolkit Inference Engine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#using-seldon-and-openvino-model-server-with-the-deep-learning-reference-stack">Using Seldon and OpenVINO™ model server with the Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#use-jupyter-notebook">Use Jupyter Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#uninstallation">Uninstallation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#compiling-aixprt-with-openmp-on-dlrs">Compiling AIXPRT with OpenMP on DLRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/dlrs.html#related-topics">Related topics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#clear-linux-os-based-containers">Clear Linux OS based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/clearlinux/README.html">Deep Learning Reference Stack containers based on Clear Linux OS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/clearlinux/ml-compiler/README.html">System Stacks Deep Learning Compiler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/ml-compiler/README.html#building-locally">Building Locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/ml-compiler/README.html#build-args">Build ARGs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#pytorch-versions">PyTorch* versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/mkl/README.html">Deep Learning Reference Stack with Pytorch and Intel® oneAPI Deep Neural Network Library (oneDNN)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/mkl/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/oss/README.html">Deep Learning Reference Stack with Pytorch and OpenBLAS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/pytorch/oss/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#tensorflow-versions">TensorFlow* versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/mkl/README.html">Deep Learning Reference Stack with TensorFlow and Intel® oneAPI Deep Neural Network Library (oneDNN)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/mkl/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/mkl/scripts/README.html">Deep Learning Reference Stack Scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/oss/README.html">Deep Learning Reference Stack with Tensorflow and Optimized Eigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow/oss/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow_2/mkl/README.html">Deep Learning Reference Stack with TensorFlow 2.0 and Intel® oneAPI Deep Neural Network Library (oneDNN)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow_2/mkl/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/clearlinux/tensorflow_2/mkl/scripts/README.html">Deep Learning Reference Stack Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dlrs/index.html#ubuntu-based-containers">Ubuntu* based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/ubuntu/README.html">Deep Learning Reference Stack containers based on Ubuntu*</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#id1">PyTorch versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/pytorch/README.html">Deep Learning Reference Stack with Pytorch and Intel® MKL-DNN</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dlrs/index.html#id2">TensorFlow versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow_2/scripts/Readme.html">Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow_2/README.html">Deep Learning Reference Stack with TensorFlow and Intel® MKL-DNN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow/scripts/Readme.html">Deep Learning Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dlrs/ubuntu/tensorflow/README.html">Deep Learning Reference Stack with TensorFlow and Intel® MKL-DNN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dars/index.html">Data Analytics Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dars/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html">Data Analytics Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/releasenote.html#stack-features">Stack Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/releasenote.html#the-data-analytics-reference-stack-with-mkl">The Data Analytics Reference Stack with MKL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/releasenote.html#the-data-analytics-reference-stack-with-openblas">The Data Analytics Reference Stack with OpenBLAS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#licensing">Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#working-with-the-data-analytics-reference-stack">Working with the Data Analytics Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#contributing-to-the-database-reference-stack">Contributing to the Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/releasenote.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/terms_of_use.html">Data Analytics Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dars/index.html#guide">Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dars/dars.html">Data Analytics Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#using-the-docker-images">Using the Docker images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#using-apache-spark-in-dars">Using Apache Spark* in DARS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#using-apache-hadoop-in-dars">Using Apache Hadoop in DARS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#deploy-dars-on-kubernetes">Deploy DARS on Kubernetes*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/dars.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dars/index.html#clear-linux-based-containers">Clear Linux based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dars/clearlinux/README.html">Data Analytics Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/index.html#openblas-versions">OpenBLAS versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html">Data Analytics Reference Stack with OpenBLAS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#java-requirements">Java Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#single-node-hadoop-cluster-setup">Single Node Hadoop Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#inside-the-running-container-we-need-to-edit-hadoop-configuration-files-as-follows">Inside the running container we need to edit hadoop configuration files as follows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#start-hadoop-daemons">Start Hadoop daemons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#single-node-spark-cluster-setup">Single Node Spark Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#run-the-pi-calculator-example-on-spark-shell">Run the Pi Calculator Example on spark-shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#run-the-pi-calculator-example-on-pyspark">Run the Pi Calculator Example on pyspark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#deploy-dars-on-kubernetes">Deploy DARS on Kubernetes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#kubernetes-installation">Kubernetes installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/README.html#faq"><strong>FAQ</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/openblas/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dars/index.html#mkl-versions">MKL versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html">Data Analytics Reference Stack with Intel® MKL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#java-requirements">Java Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#single-node-hadoop-cluster-setup">Single Node Hadoop Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#inside-the-running-container-we-need-to-edit-hadoop-configuration-files-as-follows">Inside the running container we need to edit hadoop configuration files as follows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#start-hadoop-daemons">Start Hadoop daemons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#single-node-spark-cluster-setup">Single Node Spark Cluster Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#run-the-pi-calculator-example-on-spark-shell">Run the Pi Calculator Example on spark-shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#run-the-pi-calculator-example-on-pyspark">Run the Pi Calculator Example on pyspark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#deploy-dars-on-kubernetes">Deploy DARS on Kubernetes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#kubernetes-installation">Kubernetes installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/README.html#faq"><strong>FAQ</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dars/clearlinux/mkl/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dbrs/index.html">Database Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/README.html">Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html">Database Reference Stack Release Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-releases">The Database Reference Stack Releases</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-with-cassandra">The Database Reference Stack with Cassandra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-with-redis">The Database Reference Stack with Redis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#the-database-reference-stack-with-memcached">The Database Reference Stack with Memcached</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/releasenote.html#how-to-get-the-database-reference-stack">How to get the Database Reference Stack</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#licensing">Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#working-with-the-database-reference-stack">Working with the Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#contributing-to-the-database-reference-stack">Contributing to the Database Reference Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/releasenote.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/terms_of_use.html">Database Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#guide">Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/dbrs.html">Database Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#hardware-requirements">Hardware Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#firmware-configuration">Firmware configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#hardware-configuration">Hardware Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#running-dbrs-with-apache-cassandra">Running DBRS with Apache Cassandra*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#deploy-an-apache-cassandra-pmem-cluster-on-kubernetes">Deploy An Apache Cassandra-PMEM cluster on Kubernetes*</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#running-dbrs-with-redis">Running DBRS with Redis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/dbrs.html#running-dbrs-with-memcached">Running DBRS with Memcached</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#clear-linux-based-containers">Clear Linux based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html">Database Reference Stack with Redis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#building-locally">Building Locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#clone-the-repository">Clone the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#run-dbrs-redis-as-a-standalone-container">Run DBRS Redis as a standalone container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html#deploy-dbrs-redis-cluster-on-kubernetes">Deploy DBRS Redis cluster on Kubernetes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/clearlinux/redis/licenses/README.html">Additional details on licenses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/index.html#apache-cassandra-versions">Apache Cassandra* versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/README.html">Database Reference Stack with Cassandra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/cassandra-pmem-helm/files/conf/README.html">Configuration files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/cassandra-pmem-helm/files/testProfiles/README.html">Test profiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/cassandra/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/index.html#memcached-versions">memcached versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/memcached/README.html">Memcached DBRS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/memcached/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/index.html#redis-versions">REDIS versions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/README.html">Database Reference Stack with Redis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/clearlinux/redis/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dbrs/index.html#centos-based-containers">CentOS based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/centos8/memcached/README.html">Memcached DBRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/centos8/memcached/README.html#build-dbrs-memcached-image">Build DBRS Memcached image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../dbrs/centos8/memcached/README.html#run-dbrs-memcached-as-a-standalone-container">Run DBRS Memcached as a standalone container</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dbrs/centos8/memcached/licenses/README.html">Additional details on licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mers/index.html">Media Reference Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mers/index.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mers/README.html">Media Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mers/README.html#source-code">Source Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/README.html#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/README.html#supported-platforms-and-media-codecs">Supported Platforms and Media Codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mers/releasenotes.html">Media Reference Stack Release Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#the-media-reference-stack">The Media Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#licensing">Licensing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#the-media-reference-stack-licenses">The Media Reference Stack licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#disclaimer">Disclaimer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#source-code">Source code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#contributing-to-the-media-reference-stack">Contributing to the Media Reference Stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/releasenotes.html#reporting-security-issues">Reporting Security Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mers/terms_of_use.html">Media Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mers/index.html#guide">Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mers/mers.html">Media Reference Stack Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mers/mers.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/mers.html#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/mers.html#get-the-pre-built-mers-container-image">Get the pre-built MeRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/mers.html#build-the-mers-container-image-from-source">Build the MeRS container image from source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/mers.html#use-the-mers-container-image">Use the MeRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/mers.html#add-aom-support">Add AOM support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mers/index.html#clear-linux-based-containers">Clear Linux based containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mers/clearlinux/INSTALL.html">Media Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../mers/clearlinux/INSTALL.html#building-locally">Building Locally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/clearlinux/INSTALL.html#pulling-from-docker-hub">Pulling from Docker Hub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/clearlinux/INSTALL.html#running-the-media-container">Running the Media Container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mers/clearlinux/INSTALL.html#run-examples">Run examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">High Performance Computing Reference Stack</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#overview">Overview</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">High Performance Compute Reference Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#releases">Releases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stack-features">Stack features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-the-pre-built-hpcrs-container-image">Get the pre-built HPCRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-hpcrs-container-image-from-source">Build the HPCRS container image from source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#use-the-hpcrs-container-image">Use the HPCRS container image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#convert-the-hpcrs-image-to-a-singularity-image">Convert the HPCRS image to a Singularity image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reporting-security-issues">Reporting Security Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legal-notice">LEGAL NOTICE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="NEWS.html">Release notes for HPCRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="NEWS.html#release-v0-1-0">Release <code class="docutils literal notranslate"><span class="pre">v0.1.0</span></code> :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="terms_of_use.html">High Performance Computing Reference Stack Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#guides">Guides</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="d2s/Readme.html">d2s - A wrapper used to convert Docker images to Singularity images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="d2s/Readme.html#version-compatibility">Version compatibility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d2s/Readme.html#install-singularity">Install Singularity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d2s/Readme.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="d2s/Readme.html#download-compile-singularity">Download &amp; Compile <em>Singularity</em></a></li>
+<li class="toctree-l4"><a class="reference internal" href="d2s/Readme.html#source-bash-completion-file-optional">Source bash completion file (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="docs/FAQ.html">HPCRS Frequently Asked Questions (FAQ)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/intel/stacks">Project GitHub repository</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">System Stacks for Linux* OS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">High Performance Computing Reference Stack</a> &raquo;</li>
+        
+      <li>High Performance Compute Reference Stack</li>
+    
+    
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="high-performance-compute-reference-stack">
+<h1>High Performance Compute Reference Stack<a class="headerlink" href="#high-performance-compute-reference-stack" title="Permalink to this headline">¶</a></h1>
+<p>The High Performance Computing Reference Stack (HPCRS) meets the needs of
+deploying HPC and AI workloads on the same system. This software solution
+reduces the complexities associated with integrating software components for
+High Performance Computing (HPC) workloads.</p>
+<p>This guide explains how to use the pre-built HPCRS container image, build
+your own HPCRS container image, and use the reference stack.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>HPCRS abstracts away the complexity of integrating multiple performance oriented
+software Components including compilers, libraries, and frameworks. HPCRS
+enables users and developers of HPC and AI workloads to accomplish their work
+using a simple containerized solution.</p>
+</div>
+<div class="section" id="releases">
+<h2>Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+<p>Refer to the <a class="reference external" href="https://github.com/intel/stacks">System Stacks for Linux* OS
+repository</a> for information and download links
+for the different versions and offerings of the stack.</p>
+<ul class="simple">
+<li><p>HPCRS v0.1.0 including a pre-built container based on Clear Linux OS
+integrating proprietary software components for single-node usage.</p></li>
+<li><p><a class="reference external" href="https://github.com/intel/stacks/blob/master/hpcrs/NEWS">HPCRS Release notes on
+GitHub*</a>
+for the latest release of HPCRS.</p></li>
+</ul>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>HPCRS can run on any host system running Linux which supports Intel® Advanced
+Vector Extensions 512 (Intel® AVX-512) and Docker*. This guide uses Clear
+Linux* OS as the host system.</p>
+<ul class="simple">
+<li><p>To install Clear Linux OS on a host system, see how to <a class="reference external" href="https://docs.01.org/clearlinux/latest/get-started/bare-metal-install-desktop.html">install Clear Linux*
+OS from the live
+desktop</a>.</p></li>
+<li><p>To install Docker* on a Clear Linux OS host system, see the <a class="reference external" href="https://docs.01.org/clearlinux/latest/tutorials/docker.html">instructions for
+installing
+Docker*</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="stack-features">
+<h2>Stack features<a class="headerlink" href="#stack-features" title="Permalink to this headline">¶</a></h2>
+<p>The HPCRS provides a pre-built Docker image, which includes instructions on
+building the image from source. HPCRS is open-sourced to make sure developers
+have easy access to the source code and are able to customize it. HPCRS is built
+using the latest <em>clearlinux/os-core</em> Docker image.</p>
+<p>HPCRS provides the following software components:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://clearlinux.org">Clear Linux* OS</a> as the base image</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/">PyTorch*</a></p></li>
+<li><p><a class="reference external" href="https://github.com/horovod/horovod">Horovod*</a></p></li>
+<li><p><a class="reference external" href="https://www.openmp.org/">OpenMP*</a></p></li>
+<li><p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/mpi-library.html">Intel® MPI Library</a></p></li>
+<li><p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/compilers/c-compilers.html">Intel® C++ Compiler</a></p></li>
+<li><p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/compilers/fortran-compilers.html">Intel® Fortran Compiler</a></p></li>
+<li><p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/math-kernel-library.html%3E">Intel® Math Kernel Library</a></p></li>
+</ul>
+<hr class="docutils" />
+<p>NOTE:</p>
+<p>Please see the <a class="reference external" href="./license/third-party-programs.txt">third party program file</a> and <a class="reference internal" href="#"><span class="doc">README</span></a> text.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="get-the-pre-built-hpcrs-container-image">
+<h2>Get the pre-built HPCRS container image<a class="headerlink" href="#get-the-pre-built-hpcrs-container-image" title="Permalink to this headline">¶</a></h2>
+<p>Pre-built HPCRS Docker images are available. To use the HPCRS:</p>
+<ol>
+<li><p>Pull the image:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">sysstacks/hpcrs-clearlinux</span></code></p>
+<hr class="docutils" />
+<p>NOTE:</p>
+<p>If you are on a network with outbound proxies, be sure to configure Docker
+to allow access. See the <a class="reference external" href="https://docs.docker.com/config/daemon/systemd/#httphttps-proxy">Docker service
+proxy</a> and
+<a class="reference external" href="https://docs.docker.com/network/proxy/#configure-the-docker-client">Docker client
+proxy</a>
+documentation for more details.</p>
+</li>
+<hr class="docutils" />
+<li><p>Once you have downloaded the image, run it using the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">sysstacks/hpcrs-clearlinux</span></code></p>
+<p>This will launch the image and drop you into a bash shell inside the
+container in the <code class="docutils literal notranslate"><span class="pre">/workspace</span></code> folder.</p>
+<p>Paths from the host can be shared to the container with the <code class="docutils literal notranslate"><span class="pre">--volume</span></code> switch
+<a class="reference external" href="https://docs.docker.com/storage/volumes/">using Docker volumes</a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="build-the-hpcrs-container-image-from-source">
+<h2>Build the HPCRS container image from source<a class="headerlink" href="#build-the-hpcrs-container-image-from-source" title="Permalink to this headline">¶</a></h2>
+<p>If you choose to build your own HPCRS container image, you can optionally add
+customizations as needed. The <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> for the HPCRS is available on
+<a class="reference external" href="https://github.com/intel/stacks/blob/master/hpcrs/Dockerfile">GitHub</a> and can be used as a
+reference when creating your own container image.</p>
+<ol>
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">hpcrs</span></code> repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/intel/stacks.git</span></code></p>
+</li>
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">stacks/hpcrs/clearlinux</span></code> directory which contains the
+Dockerfile for the HPCRS.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">./stacks/hpcrs</span></code></p>
+</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">make</span></code> to build the HPCRS container image. The
+<code class="docutils literal notranslate"><span class="pre">make</span></code> target will run the appropriate <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code>
+command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">build</span></code></p>
+</li>
+</ol>
+</div>
+<div class="section" id="use-the-hpcrs-container-image">
+<h2>Use the HPCRS container image<a class="headerlink" href="#use-the-hpcrs-container-image" title="Permalink to this headline">¶</a></h2>
+<p>This section shows examples of how the HPCRS container image can be used.</p>
+<div class="section" id="pytorch-benchmarks">
+<h3>PyTorch benchmarks<a class="headerlink" href="#pytorch-benchmarks" title="Permalink to this headline">¶</a></h3>
+<p>This section describes running the <a class="reference external" href="https://github.com/pytorch/benchmark">PyTorch
+benchmarks</a> for Caffe2 in single node.</p>
+<ol>
+<li><p><a class="reference external" href="#get-the-pre-built-hpcrs-container-image">Get the pre-built HPCRS container image</a></p></li>
+<li><p>Run the image with Docker:</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--name</span> <span class="pre">&lt;image</span> <span class="pre">name&gt;</span>&#160; <span class="pre">--rm</span> <span class="pre">-i</span> <span class="pre">-t</span> <span class="pre">sysstacks/hpcrs-clearlinux</span> <span class="pre">/bin/bash</span></code></p>
+<hr class="docutils" />
+<p>NOTE:</p>
+<p>Launching the Docker image with the <code class="docutils literal notranslate"><span class="pre">-i</span></code> argument starts
+interactive mode within the container. Enter the following commands in
+the running container.</p>
+</li>
+<hr class="docutils" />
+<li><p>Navigate to to where Pytorch and Caffe are installed:</p>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/usr/lib/python3.8/site-packages/caffe2/python/</span></code></p>
+</li>
+<li><p>Install dependencies for the benchmark:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install protobuf
+pip install future
+</pre></div>
+</div>
+</li>
+<li><p>Execute the benchmark script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python convnet_benchmarks.py --batch_size <span class="m">32</span> <span class="se">\</span>
+                             --cpu <span class="se">\</span>
+                             --model AlexNet
+</pre></div>
+</div>
+</li>
+</ol>
+<p><em>Intel and the Intel logo are trademarks of Intel Corporation or its
+subsidiaries.</em></p>
+</div>
+</div>
+<div class="section" id="convert-the-hpcrs-image-to-a-singularity-image">
+<h2>Convert the HPCRS image to a Singularity image<a class="headerlink" href="#convert-the-hpcrs-image-to-a-singularity-image" title="Permalink to this headline">¶</a></h2>
+<p>You may want to run the HPCRS image on Singularity for HPC workloads. A tool is
+available to easily convert the HPCRS Docker image to a Singularity image.</p>
+<ol>
+<li><p>Ensure Singularity is installed following the steps in the <a class="reference external" href="https://intel.github.io/stacks/hpcrs/README.html">Intel Stacks
+documentation</a>.</p></li>
+<li><p>Get the <code class="docutils literal notranslate"><span class="pre">d2s</span></code> tool to convert Docker images to Singularity</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/intel/stacks
+<span class="nb">cd</span> stacks/hpcrs/d2s/
+</pre></div>
+</div>
+</li>
+<li><p>Identify the ID of the hpcrs-clearlinux Docker image</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python d2s.py --list_docker_images
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==============================</span>
+<span class="n">Docker</span> <span class="n">images</span> <span class="n">present</span> <span class="n">locally</span>
+<span class="o">==============================</span>
+<span class="n">ID</span>         <span class="n">NAME</span>
+<span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;sysstacks/hpcrs-clearlinux&quot;</span>
+<span class="o">==============================</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use the d2s script to convert the Docker image to a Singularity, substituting
+<code class="docutils literal notranslate"><span class="pre">&lt;ID&gt;</span></code> with the ID discovered in the previous command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python d2s.py --convert_docker_images &lt;ID&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Start the Singularity image that was created and enter its shell,
+substituting <code class="docutils literal notranslate"><span class="pre">&lt;NAME&gt;</span></code> with the image name created from the previous command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity shell &lt;NAME&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="reporting-security-issues">
+<h2>Reporting Security Issues<a class="headerlink" href="#reporting-security-issues" title="Permalink to this headline">¶</a></h2>
+<p>If you have discovered potential security vulnerability in an Intel product,
+please contact the iPSIRT at secure&#64;intel.com.</p>
+<p>It is important to include the following details:</p>
+<ul class="simple">
+<li><p>The products and versions affected</p></li>
+<li><p>Detailed description of the vulnerability</p></li>
+<li><p>Information on known exploits</p></li>
+</ul>
+<p>Vulnerability information is extremely sensitive. The iPSIRT strongly recommends
+that all security vulnerability reports sent to Intel be encrypted using the
+iPSIRT PGP key. The PGP key is available here:
+https://www.intel.com/content/www/us/en/security-center/pgp-public-key.html</p>
+<p>Software to encrypt messages may be obtained from:</p>
+<ul class="simple">
+<li><p>PGP Corporation</p></li>
+<li><p>GnuPG</p></li>
+</ul>
+<p>For more information on how Intel works to resolve security issues, see:
+<a class="reference external" href="https://www.intel.com/content/www/us/en/security-center/vulnerability-handling-guidelines.html">Vulnerability handling
+guidelines</a></p>
+</div>
+<div class="section" id="legal-notice">
+<h2>LEGAL NOTICE<a class="headerlink" href="#legal-notice" title="Permalink to this headline">¶</a></h2>
+<p>By accessing, downloading or using this software and any required dependent software (the “Software Package”), you agree to the terms and conditions of the software license agreements for the Software Package, which may also include notices, disclaimers, or license terms for third party software included with the Software Package. Please refer to the “third-party-programs.txt” or other similarly-named text file for additional details.</p>
+<p><em>Intel and the Intel logo are trademarks of Intel Corporation or its
+subsidiaries</em></p>
+<p><em>*Other names and brands may be claimed as the property of others.</em></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="NEWS.html" class="btn btn-neutral float-right" title="Release notes for HPCRS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="High Performance Computing Reference Stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
